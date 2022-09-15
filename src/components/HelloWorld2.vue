@@ -15,7 +15,7 @@
         </thead>
       </table>
     </div>
-    <div class="vgt-responsive" style="max-height: 150px">
+    <div class="vgt-responsive" style="max-height: 80px">
       <table class="vgt-table">
         <thead>
           <tr>
@@ -49,6 +49,7 @@ export default {
         { id: 1, name: "John", age: 20 },
         { id: 2, name: "Jane", age: 24 },
         { id: 3, name: "Susan", age: 16 },
+        { id: 4, name: "mike", age: 20 },
       ],
       fixedColumns: [],
       originalColumns: [],
@@ -90,13 +91,13 @@ export default {
 }
 
 .vgt-fixed-header {
-  background-color: #fff;
   position: absolute;
   z-index: 10;
+  background-color: #fff;
 }
 
 .vgt-responsive {
-  overflow-x: auto;
+  overflow-y: scroll;
 }
 
 .vgt-table {
@@ -107,11 +108,9 @@ export default {
 
 .vgt-table th {
   border: 1px solid #000000;
-  padding: 0.75em 1.5em 0.75em 0.75em;
 }
 
 .vgt-table td {
   border: 1px solid #000000;
-  padding: 0.75em 0.75em 0.75em 0.75em;
 }
 </style>
