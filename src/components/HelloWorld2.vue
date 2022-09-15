@@ -17,25 +17,6 @@
               >
                 {{ column.label }}
               </th>
-              <!-- <th
-                scope="col"
-                aria-sort="descending"
-                aria-controls="col-0"
-                class="vgt-left-align"
-                style="width: 723.727px"
-              >
-                <span>Name</span>
-              </th>
-              <th
-                scope="col"
-                aria-sort="descending"
-                aria-controls="col-1"
-                class="vgt-right-align"
-                style="width: 598.289px"
-              >
-                <span>Age</span>
-              </th>
-            </tr> -->
             </tr>
           </thead>
         </table>
@@ -57,24 +38,6 @@
               >
                 {{ column.label }}
               </th>
-              <!-- <th
-                scope="col"
-                aria-sort="descending"
-                aria-controls="col-0"
-                class="vgt-left-align"
-                style="min-width: auto; width: auto"
-              >
-                <span>Name</span>
-              </th>
-              <th
-                scope="col"
-                aria-sort="descending"
-                aria-controls="col-1"
-                class="vgt-right-align"
-                style="min-width: auto; width: auto"
-              >
-                <span>Age</span>
-              </th> -->
             </tr>
           </thead>
           <tbody>
@@ -102,7 +65,6 @@ export default {
   name: "my-component2",
   data() {
     return {
-      originalHeader: {},
       fixedColumns: [],
       originalColumns: [],
       ro: null,
@@ -119,6 +81,12 @@ export default {
       ],
     };
   },
+  mounted() {
+    window.addEventListener("resize", this.resize);
+  },
+  updated() {
+    this.resize();
+  },
   methods: {
     setFixedColumn(el) {
       if (el) {
@@ -132,36 +100,13 @@ export default {
     },
     resize() {
       this.fixedColumns.forEach((fixedColumn, index) => {
-        // const width = window.getComputedStyle(
-        //   this.originalColumns[index],
-        //   null
-        // ).width;
-        const width = window.getComputedStyle(
-          this.$refs.originalHeader.rows[0].cells[index],
+        const originalColumnWidth = window.getComputedStyle(
+          this.originalColumns[index],
           null
         ).width;
-        fixedColumn.setAttribute("width", width);
+        fixedColumn.setAttribute("width", originalColumnWidth);
       });
     },
-  },
-  beforeUpdate() {
-    this.resize();
-    // this.fixedColumns = [];
-    // this.originalColumns = [];
-  },
-  updated() {
-    this.resize();
-  },
-  watch: {
-    originalHeader: {
-      handler() {
-        this.resize();
-      },
-      immediate: true,
-    },
-  },
-  mounted() {
-    window.addEventListener("resize", this.resize);
   },
 };
 </script>
