@@ -108,37 +108,24 @@ export default {
 .vgt-fixed-header {
   position: absolute;
   z-index: 10;
-  overflow-x: auto;
 }
 
 table.vgt-table {
-  font-size: 16px;
   border-collapse: collapse;
   background-color: #fff;
   width: 100%;
   max-width: 100%;
-  table-layout: auto;
   border: 1px solid #dcdfe6;
 }
 
 table {
-  display: table;
   border-collapse: separate;
   box-sizing: border-box;
-  text-indent: initial;
   border-spacing: 2px;
-  border-color: grey;
-}
-
-thead {
-  display: table-header-group;
-  vertical-align: middle;
-  border-color: inherit;
 }
 
 .vgt-table th {
   padding: 0.75em 1.5em 0.75em 0.75em;
-  vertical-align: middle;
   position: relative;
 }
 
@@ -150,9 +137,6 @@ thead {
 
 table.vgt-table td {
   padding: 0.75em 0.75em 0.75em 0.75em;
-  vertical-align: top;
   border-bottom: 1px solid #dcdfe6;
-  color: #606266;
 }
 </style>
->
