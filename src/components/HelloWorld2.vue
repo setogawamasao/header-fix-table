@@ -89,15 +89,8 @@ export default {
   position: relative;
 }
 
-.vgt-table {
-  width: 100%;
-  max-width: 100%;
-  border: 1px solid #dcdfe6;
-  border-collapse: collapse;
-  background-color: #fff;
-}
-
 .vgt-fixed-header {
+  background-color: #fff;
   position: absolute;
   z-index: 10;
 }
@@ -106,11 +99,19 @@ export default {
   overflow-x: auto;
 }
 
+.vgt-table {
+  width: 100%;
+  border: 1px solid #000000;
+  border-collapse: collapse;
+}
+
 .vgt-table th {
+  border: 1px solid #000000;
   padding: 0.75em 1.5em 0.75em 0.75em;
 }
 
 .vgt-table td {
+  border: 1px solid #000000;
   padding: 0.75em 0.75em 0.75em 0.75em;
 }
 </style>
