@@ -23,28 +23,13 @@ export default {
   data() {
     return {
       columns: [
-        {
-          label: "Name",
-          field: "name",
-        },
-        {
-          label: "Age",
-          field: "age",
-          type: "number",
-        },
+        { label: "Name", field: "name" },
+        { label: "Age", field: "age" },
       ],
       rows: [
         { id: 1, name: "John", age: 20 },
-        {
-          id: 2,
-          name: "Jane",
-          age: 24,
-        },
-        {
-          id: 3,
-          name: "Susan",
-          age: 16,
-        },
+        { id: 2, name: "Jane", age: 24 },
+        { id: 3, name: "Susan", age: 16 },
       ],
     };
   },

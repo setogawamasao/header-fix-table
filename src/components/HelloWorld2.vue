@@ -1,50 +1,40 @@
 <template>
   <div class="vgt-wrap">
-    <div class="vgt-inner-wrap">
-      <div class="vgt-fixed-header">
-        <table id="vgt-table" class="vgt-table bordered">
-          <thead ref="fixedHeader">
-            <tr>
-              <th
-                v-for="(column, index) in columns"
-                :key="index"
-                :ref="setFixedColumn"
-              >
-                {{ column.label }}
-              </th>
-            </tr>
-          </thead>
-        </table>
-      </div>
-      <div class="vgt-responsive" style="max-height: 150px">
-        <table id="vgt-table" class="vgt-table bordered">
-          <thead ref="originalHeader">
-            <tr>
-              <th
-                v-for="(column, index) in columns"
-                :key="index"
-                :ref="setOriginalColumn"
-              >
-                {{ column.label }}
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="">
-              <td class="vgt-left-align"><span> John </span></td>
-              <td class="vgt-right-align"><span> 20 </span></td>
-            </tr>
-            <tr class="">
-              <td class="vgt-left-align"><span> Jane </span></td>
-              <td class="vgt-right-align"><span> 24 </span></td>
-            </tr>
-            <tr class="">
-              <td class="vgt-left-align"><span> Susan </span></td>
-              <td class="vgt-right-align"><span> 16 </span></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+    <div class="vgt-fixed-header">
+      <table class="vgt-table">
+        <thead>
+          <tr>
+            <th
+              v-for="(column, index) in columns"
+              :key="index"
+              :ref="setFixedColumn"
+            >
+              {{ column.label }}
+            </th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+    <div class="vgt-responsive" style="max-height: 150px">
+      <table class="vgt-table">
+        <thead>
+          <tr>
+            <th
+              v-for="(column, index) in columns"
+              :key="index"
+              :ref="setOriginalColumn"
+            >
+              {{ column.label }}
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="(row, index) in rows" :key="index">
+            <td>{{ row.name }}</td>
+            <td>{{ row.age }}</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </template>
@@ -54,20 +44,14 @@ export default {
   name: "my-component2",
   data() {
     return {
+      columns: [{ label: "Name" }, { label: "Age" }],
+      rows: [
+        { id: 1, name: "John", age: 20 },
+        { id: 2, name: "Jane", age: 24 },
+        { id: 3, name: "Susan", age: 16 },
+      ],
       fixedColumns: [],
       originalColumns: [],
-      ro: null,
-      columns: [
-        {
-          label: "Name",
-          field: "name",
-        },
-        {
-          label: "Age",
-          field: "age",
-          type: "number",
-        },
-      ],
     };
   },
   mounted() {
@@ -105,12 +89,7 @@ export default {
   position: relative;
 }
 
-.vgt-fixed-header {
-  position: absolute;
-  z-index: 10;
-}
-
-table.vgt-table {
+.vgt-table {
   width: 100%;
   max-width: 100%;
   border: 1px solid #dcdfe6;
@@ -118,25 +97,20 @@ table.vgt-table {
   background-color: #fff;
 }
 
-/* table {
-  border-collapse: separate;
-  box-sizing: border-box;
-  border-spacing: 2px;
-} */
-
-.vgt-table th {
-  padding: 0.75em 1.5em 0.75em 0.75em;
-  /* position: relative; */
+.vgt-fixed-header {
+  position: absolute;
+  z-index: 10;
 }
 
 .vgt-responsive {
-  width: 100%;
   overflow-x: auto;
-  /* position: relative; */
 }
 
-table.vgt-table td {
+.vgt-table th {
+  padding: 0.75em 1.5em 0.75em 0.75em;
+}
+
+.vgt-table td {
   padding: 0.75em 0.75em 0.75em 0.75em;
-  /* border-bottom: 1px solid #dcdfe6; */
 }
 </style>
