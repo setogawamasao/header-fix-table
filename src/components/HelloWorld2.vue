@@ -111,32 +111,32 @@ export default {
 }
 
 table.vgt-table {
-  border-collapse: collapse;
-  background-color: #fff;
   width: 100%;
   max-width: 100%;
   border: 1px solid #dcdfe6;
+  border-collapse: collapse;
+  background-color: #fff;
 }
 
-table {
+/* table {
   border-collapse: separate;
   box-sizing: border-box;
   border-spacing: 2px;
-}
+} */
 
 .vgt-table th {
   padding: 0.75em 1.5em 0.75em 0.75em;
-  position: relative;
+  /* position: relative; */
 }
 
 .vgt-responsive {
   width: 100%;
   overflow-x: auto;
-  position: relative;
+  /* position: relative; */
 }
 
 table.vgt-table td {
   padding: 0.75em 0.75em 0.75em 0.75em;
-  border-bottom: 1px solid #dcdfe6;
+  /* border-bottom: 1px solid #dcdfe6; */
 }
 </style>
