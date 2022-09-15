@@ -16,7 +16,7 @@
           </thead>
         </table>
       </div>
-      <div class="vgt-responsive" style="max-height: 100px">
+      <div class="vgt-responsive" style="max-height: 150px">
         <table id="vgt-table" class="vgt-table bordered">
           <thead ref="originalHeader">
             <tr>
@@ -105,17 +105,6 @@ export default {
   position: relative;
 }
 
-div {
-  display: block;
-}
-
-.vgt-inner-wrap {
-  border-radius: 0.25rem;
-  -webkit-box-shadow: 0 1px 3px 0 rgb(50 50 93 / 10%),
-    0 1px 2px 0 rgb(50 50 93 / 6%);
-  box-shadow: 0 1px 3px 0 rgb(50 50 93 / 10%), 0 1px 2px 0 rgb(50 50 93 / 6%);
-}
-
 .vgt-fixed-header {
   position: absolute;
   z-index: 10;
@@ -141,39 +130,10 @@ table {
   border-color: grey;
 }
 
-colgroup {
-  display: table-column-group;
-}
-
-col {
-  display: table-column;
-}
-
 thead {
   display: table-header-group;
   vertical-align: middle;
   border-color: inherit;
-}
-
-tr {
-  display: table-row;
-  vertical-align: inherit;
-  border-color: inherit;
-}
-
-.vgt-table thead th {
-  color: #606266;
-  vertical-align: bottom;
-  border-bottom: 1px solid #dcdfe6;
-  padding-right: 1.5em;
-  background: -webkit-gradient(
-    linear,
-    left top,
-    left bottom,
-    from(#f4f5f8),
-    to(#f1f3f6)
-  );
-  background: linear-gradient(#f4f5f8, #f1f3f6);
 }
 
 .vgt-table th {
@@ -182,29 +142,10 @@ tr {
   position: relative;
 }
 
-th {
-  display: table-cell;
-  vertical-align: inherit;
-  font-weight: bold;
-  text-align: -internal-center;
-}
-
 .vgt-responsive {
   width: 100%;
   overflow-x: auto;
   position: relative;
-}
-
-tbody {
-  display: table-row-group;
-  vertical-align: middle;
-  border-color: inherit;
-}
-
-tr {
-  display: table-row;
-  vertical-align: inherit;
-  border-color: inherit;
 }
 
 table.vgt-table td {
@@ -212,11 +153,6 @@ table.vgt-table td {
   vertical-align: top;
   border-bottom: 1px solid #dcdfe6;
   color: #606266;
-}
-
-td {
-  display: table-cell;
-  vertical-align: inherit;
 }
 </style>
 >
