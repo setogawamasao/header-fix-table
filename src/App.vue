@@ -1,19 +1,19 @@
 <template>
   <div id="app">
-    <HelloWorld />
+    <!-- <HelloWorld /> -->
     <br /><br /><br />
     <HelloWorld2 />
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+// import HelloWorld from "./components/HelloWorld.vue";
 import HelloWorld2 from "./components/HelloWorld2.vue";
 
 export default {
   name: "app",
   components: {
-    HelloWorld,
+    // HelloWorld,
     HelloWorld2,
   },
 };

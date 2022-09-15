@@ -3,15 +3,10 @@
     <div class="vgt-inner-wrap">
       <div class="vgt-fixed-header">
         <table id="vgt-table" class="vgt-table bordered">
-          <colgroup>
-            <col id="col-0" />
-            <col id="col-1" />
-          </colgroup>
           <thead ref="fixedHeader">
             <tr>
               <th
                 v-for="(column, index) in columns"
-                scope="col"
                 :key="index"
                 :ref="setFixedColumn"
               >
@@ -23,16 +18,10 @@
       </div>
       <div class="vgt-responsive" style="max-height: 100px">
         <table id="vgt-table" class="vgt-table bordered">
-          <colgroup>
-            <col id="col-0" />
-            <col id="col-1" />
-          </colgroup>
           <thead ref="originalHeader">
             <tr>
               <th
                 v-for="(column, index) in columns"
-                scope="col"
-                style=""
                 :key="index"
                 :ref="setOriginalColumn"
               >
